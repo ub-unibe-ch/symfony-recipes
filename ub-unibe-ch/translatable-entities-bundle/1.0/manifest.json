@@ -4,7 +4,7 @@
     },
     "env": {
         "UB_DEFAULT_LOCALE": "en",
-        "UB_AVAILABLE_LOCALES": "en",
+        "UB_AVAILABLE_LOCALES": "de,en",
         "UB_FALLBACK_LOCALES": ""
     },
     "copy-from-recipe": {
