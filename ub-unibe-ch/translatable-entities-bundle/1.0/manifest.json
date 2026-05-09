@@ -4,8 +4,8 @@
     },
     "env": {
         "UB_DEFAULT_LOCALE": "en",
-        "UB_AVAILABLE_LOCALES": "de,en",
-        "UB_FALLBACK_LOCALES": ""
+        "UB_AVAILABLE_LOCALES": "en,de",
+        "UB_FALLBACK_LOCALES": "en,de"
     },
     "copy-from-recipe": {
         "config/": "%CONFIG_DIR%/"
