@@ -1,0 +1,51 @@
+name: Compile Recipes
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'index.json'
+      - '**.*.json'
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          tools: composer
+
+      - name: Clone recipes-checker
+        run: git clone https://github.com/symfony-tools/recipes-checker.git /tmp/recipes-checker
+
+      - name: Install recipes-checker dependencies
+        run: composer install --no-interaction --prefer-dist --quiet
+        working-directory: /tmp/recipes-checker
+
+      - name: Compile recipes
+        run: |
+          mkdir -p output
+          git ls-tree HEAD */*/* | php /tmp/recipes-checker/run generate:flex-endpoint \
+            ub-unibe-ch/symfony-recipes main main ./output/
+
+      - name: Copy compiled files to repo root
+        run: |
+          cp output/index.json .
+          cp output/*.json . 2>/dev/null || true
+          cp -r output/archived . 2>/dev/null || true
+
+      - name: Commit and push compiled recipes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.json "*.json" archived/ 2>/dev/null || true
+          git add index.json *.json 2>/dev/null || true
+          git diff --staged --quiet || git commit -m "chore: compile recipes [skip ci]"
+          git diff HEAD~1 --quiet 2>/dev/null || git push

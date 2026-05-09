@@ -1,0 +1,4 @@
+ub_translatable_entities:
+    default_locale: '%env(UB_DEFAULT_LOCALE)%'
+    available_locales: '%env(csv:UB_AVAILABLE_LOCALES)%'
+    fallback_locales: '%env(csv:UB_FALLBACK_LOCALES)%'
