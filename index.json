@@ -2,7 +2,7 @@
     "aliases": [],
     "recipes": {
         "ub-unibe-ch/translatable-entities-bundle": [
-            "1.0"
+            "0.0"
         ]
     },
     "recipe-conflicts": [],
