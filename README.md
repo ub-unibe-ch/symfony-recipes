@@ -32,4 +32,4 @@ composer require ub-unibe-ch/translatable-entities-bundle
 
 | Package | Version | Description |
 |---|---|---|
-| `ub-unibe-ch/translatable-entities-bundle` | `0.0` | Registers bundle, adds `.env` locale vars, copies config stub |
+| `ub-unibe-ch/translatable-entities-bundle` | `1.0` | Registers bundle, adds `.env` locale vars, copies config stub |
