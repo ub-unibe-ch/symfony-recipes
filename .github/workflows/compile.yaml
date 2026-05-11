@@ -1,20 +1,23 @@
 name: Compile Recipes
 
 on:
-  push:
+  pull_request:
     branches: [main]
-    paths-ignore:
-      - 'index.json'
-      - '**.*.json'
+    types: [opened, synchronize, reopened]
 
 jobs:
   compile:
+    # Skip when the bot commits compiled files back to the PR branch
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     permissions:
       contents: write
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
@@ -41,11 +44,10 @@ jobs:
           cp output/*.json . 2>/dev/null || true
           cp -r output/archived . 2>/dev/null || true
 
-      - name: Commit and push compiled recipes
+      - name: Commit and push compiled recipes to PR branch
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add index.json "*.json" archived/ 2>/dev/null || true
-          git add index.json *.json 2>/dev/null || true
+          git add index.json *.json archived/ 2>/dev/null || true
           git diff --staged --quiet || git commit -m "chore: compile recipes [skip ci]"
-          git diff HEAD~1 --quiet 2>/dev/null || git push
+          git push origin HEAD:${{ github.head_ref }}
