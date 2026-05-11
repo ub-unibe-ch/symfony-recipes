@@ -8,7 +8,8 @@ on:
 jobs:
   compile:
     # Skip when the bot commits compiled files back to the PR branch
-    if: github.actor != 'github-actions[bot]'
+    # Skip for PRs from forks (GITHUB_TOKEN cannot push to a contributor's fork)
+    if: github.actor != 'github-actions[bot]' && github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     permissions:
       contents: write
