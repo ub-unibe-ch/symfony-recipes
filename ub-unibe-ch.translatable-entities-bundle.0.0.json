@@ -1,0 +1,34 @@
+{
+    "manifests": {
+        "ub-unibe-ch/translatable-entities-bundle": {
+            "manifest": {
+                "bundles": {
+                    "UB\\TranslatableEntitiesBundle\\UBTranslatableEntitiesBundle": [
+                        "all"
+                    ]
+                },
+                "env": {
+                    "UB_DEFAULT_LOCALE": "en",
+                    "UB_AVAILABLE_LOCALES": "en,de",
+                    "UB_FALLBACK_LOCALES": "en,de"
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/ub_translatable_entities.yaml": {
+                    "contents": [
+                        "ub_translatable_entities:",
+                        "    default_locale: '%env(UB_DEFAULT_LOCALE)%'",
+                        "    available_locales: '%env(csv:UB_AVAILABLE_LOCALES)%'",
+                        "    fallback_locales: '%env(csv:UB_FALLBACK_LOCALES)%'",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "0ba2f7838c89b825c4724b871e04fc75bf7627e5"
+        }
+    }
+}

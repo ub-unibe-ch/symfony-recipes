@@ -26,7 +26,7 @@ composer require ub-unibe-ch/translatable-entities-bundle
 ## How it works
 
 - Recipe source files live under `<vendor>/<package>/<version>/`
-- On every push to `main`, a GitHub Action compiles them into `index.json` and the recipe JSON files using [symfony-tools/recipes-checker](https://github.com/symfony-tools/recipes-checker)
+- On every pull request to `main`, a GitHub Action compiles them into `index.json` and the recipe JSON files using [symfony-tools/recipes-checker](https://github.com/symfony-tools/recipes-checker) and commits the result back to the PR branch
 
 ## Recipes
 
