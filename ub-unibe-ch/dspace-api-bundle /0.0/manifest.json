@@ -1,0 +1,13 @@
+{
+    "bundles": {
+        "UB\\DspaceApiBundle\\DspaceApiBundle": ["all"]
+    },
+    "env": {
+        "DSPACE_URL": "https://boris...unibe.ch",
+        "DSPACE_USER": "user",
+        "DSPACE_PASSWORD": "password"
+    },
+    "copy-from-recipe": {
+        "config/": "%CONFIG_DIR%/"
+    }
+}
