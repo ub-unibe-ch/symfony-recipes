@@ -1,6 +1,9 @@
 {
     "aliases": [],
     "recipes": {
+        "ub-unibe-ch/dspace-api-bundle": [
+            "0.0"
+        ],
         "ub-unibe-ch/translatable-entities-bundle": [
             "0.0"
         ]

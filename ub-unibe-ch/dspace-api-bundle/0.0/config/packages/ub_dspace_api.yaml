@@ -1,0 +1,4 @@
+ub_dspace_api:
+    base_uri: '%env(DSPACE_URL)%'
+    user: '%env(DSPACE_USER)%'
+    password: '%env(DSPACE_PASSWORD)%'
