@@ -3,10 +3,10 @@
         "UB\\JobReportBundle\\UBJobReportBundle": ["all"]
     },
     "env": {
-        "APP_NAME": "MyApp",
-        "REPORT_EMAIL_FROM": "noreply@example.com",
-        "REPORT_EMAIL_TO": "ops@example.com",
-        "REPORT_EMAIL_MODE": "always"
+        "UB_JOB_REPORT_APP_NAME": "MyApp",
+        "UB_JOB_REPORT_EMAIL_FROM": "noreply@example.com",
+        "UB_JOB_REPORT_EMAIL_TO": "ops@example.com",
+        "UB_JOB_REPORT_EMAIL_MODE": "always"
     },
     "copy-from-recipe": {
         "config/": "%CONFIG_DIR%/"

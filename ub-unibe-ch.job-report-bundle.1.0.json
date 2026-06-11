@@ -8,10 +8,10 @@
                     ]
                 },
                 "env": {
-                    "APP_NAME": "MyApp",
-                    "REPORT_EMAIL_FROM": "noreply@example.com",
-                    "REPORT_EMAIL_TO": "ops@example.com",
-                    "REPORT_EMAIL_MODE": "always"
+                    "UB_JOB_REPORT_APP_NAME": "MyApp",
+                    "UB_JOB_REPORT_EMAIL_FROM": "noreply@example.com",
+                    "UB_JOB_REPORT_EMAIL_TO": "ops@example.com",
+                    "UB_JOB_REPORT_EMAIL_MODE": "always"
                 },
                 "copy-from-recipe": {
                     "config/": "%CONFIG_DIR%/"
@@ -21,11 +21,11 @@
                 "config/packages/ub_job_report.yaml": {
                     "contents": [
                         "ub_job_report:",
-                        "    app_name: '%env(APP_NAME)%'",
+                        "    app_name: '%env(UB_JOB_REPORT_APP_NAME)%'",
                         "    report_email:",
-                        "        from: '%env(REPORT_EMAIL_FROM)%'",
-                        "        to: '%env(REPORT_EMAIL_TO)%'",
-                        "        mode: '%env(REPORT_EMAIL_MODE)%'",
+                        "        from: '%env(UB_JOB_REPORT_EMAIL_FROM)%'",
+                        "        to: '%env(UB_JOB_REPORT_EMAIL_TO)%'",
+                        "        mode: '%env(UB_JOB_REPORT_EMAIL_MODE)%'",
                         ""
                     ],
                     "executable": false

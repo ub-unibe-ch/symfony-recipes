@@ -1,6 +1,6 @@
 ub_job_report:
-    app_name: '%env(APP_NAME)%'
+    app_name: '%env(UB_JOB_REPORT_APP_NAME)%'
     report_email:
-        from: '%env(REPORT_EMAIL_FROM)%'
-        to: '%env(REPORT_EMAIL_TO)%'
-        mode: '%env(REPORT_EMAIL_MODE)%'
+        from: '%env(UB_JOB_REPORT_EMAIL_FROM)%'
+        to: '%env(UB_JOB_REPORT_EMAIL_TO)%'
+        mode: '%env(UB_JOB_REPORT_EMAIL_MODE)%'
