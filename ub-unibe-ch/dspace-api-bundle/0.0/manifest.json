@@ -1,6 +1,6 @@
 {
     "bundles": {
-        "UB\\DspaceApiBundle\\DspaceApiBundle": ["all"]
+        "UB\\DspaceApiBundle\\UBDspaceApiBundle": ["all"]
     },
     "env": {
         "DSPACE_URL": "https://boris...unibe.ch",
