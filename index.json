@@ -4,6 +4,9 @@
         "ub-unibe-ch/dspace-api-bundle": [
             "0.0"
         ],
+        "ub-unibe-ch/job-report-bundle": [
+            "1.0"
+        ],
         "ub-unibe-ch/translatable-entities-bundle": [
             "0.0"
         ]

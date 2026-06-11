@@ -1,0 +1,49 @@
+{
+    "manifests": {
+        "ub-unibe-ch/job-report-bundle": {
+            "manifest": {
+                "bundles": {
+                    "UB\\JobReportBundle\\UBJobReportBundle": [
+                        "all"
+                    ]
+                },
+                "env": {
+                    "APP_NAME": "MyApp",
+                    "REPORT_EMAIL_FROM": "noreply@example.com",
+                    "REPORT_EMAIL_TO": "ops@example.com",
+                    "REPORT_EMAIL_MODE": "always"
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/ub_job_report.yaml": {
+                    "contents": [
+                        "ub_job_report:",
+                        "    app_name: '%env(APP_NAME)%'",
+                        "    report_email:",
+                        "        from: '%env(REPORT_EMAIL_FROM)%'",
+                        "        to: '%env(REPORT_EMAIL_TO)%'",
+                        "        mode: '%env(REPORT_EMAIL_MODE)%'",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/packages/ub_job_report_messenger.yaml": {
+                    "contents": [
+                        "framework:",
+                        "    messenger:",
+                        "        buses:",
+                        "            messenger.bus.default:",
+                        "                middleware:",
+                        "                    - UB\\JobReportBundle\\Messenger\\Middleware\\JobRunTrackingMiddleware",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "e853f8fb460845bf7cb65aa691bfab0870ef068e"
+        }
+    }
+}
