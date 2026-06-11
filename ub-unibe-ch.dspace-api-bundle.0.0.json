@@ -3,7 +3,7 @@
         "ub-unibe-ch/dspace-api-bundle": {
             "manifest": {
                 "bundles": {
-                    "UB\\DspaceApiBundle\\DspaceApiBundle": [
+                    "UB\\DspaceApiBundle\\UBDspaceApiBundle": [
                         "all"
                     ]
                 },
