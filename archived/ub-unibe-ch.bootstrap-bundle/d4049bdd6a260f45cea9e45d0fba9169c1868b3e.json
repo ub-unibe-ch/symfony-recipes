@@ -1,0 +1,61 @@
+{
+    "manifests": {
+        "ub-unibe-ch/bootstrap-bundle": {
+            "manifest": {
+                "copy-from-recipe": {
+                    "tests/": "%SRC_DIR%/../tests/"
+                },
+                "add-lines": [
+                    {
+                        "file": ".env.test",
+                        "content": "PANTHER_WEB_SERVER_ROUTER=%kernel.project_dir%/tests/bootstrap-bundle/panther-router.php",
+                        "position": "bottom",
+                        "requires": "symfony/panther",
+                        "warn_if_missing": false
+                    }
+                ],
+                "post-install-output": [
+                    "A Panther router script was added at",
+                    "<comment>tests/bootstrap-bundle/panther-router.php</comment>.",
+                    "",
+                    "If your project requires <comment>symfony/panther</comment> (dev or non-dev), it was",
+                    "also wired up via <comment>PANTHER_WEB_SERVER_ROUTER</comment> in <comment>.env.test</comment> so",
+                    "AssetMapper-compiled CSS/JS/fonts/images load correctly during Panther test",
+                    "runs (PHP's built-in web server otherwise routes every request through the",
+                    "Symfony kernel, causing static assets to 404). Otherwise it's unused and can",
+                    "safely be ignored/deleted. See https://github.com/symfony/panther/issues/630",
+                    "for details."
+                ]
+            },
+            "files": {
+                "tests/bootstrap-bundle/panther-router.php": {
+                    "contents": [
+                        "<?php",
+                        "",
+                        "// Symfony Panther's PHP built-in web server does not serve static files",
+                        "// (compiled AssetMapper CSS/JS, fonts, images) unless a router script checks",
+                        "// for them first - without this, every request falls through to the Symfony",
+                        "// kernel and static assets 404 during Panther test runs.",
+                        "// See https://github.com/symfony/panther/issues/630",
+                        "",
+                        "if (is_file($_SERVER['DOCUMENT_ROOT'].\\DIRECTORY_SEPARATOR.$_SERVER['SCRIPT_NAME'])) {",
+                        "    return false;",
+                        "}",
+                        "",
+                        "$script = 'index.php';",
+                        "",
+                        "$_SERVER = array_merge($_SERVER, $_ENV);",
+                        "$_SERVER['SCRIPT_FILENAME'] = $_SERVER['DOCUMENT_ROOT'].\\DIRECTORY_SEPARATOR.$script;",
+                        "$_SERVER['SCRIPT_NAME'] = \\DIRECTORY_SEPARATOR.$script;",
+                        "$_SERVER['PHP_SELF'] = \\DIRECTORY_SEPARATOR.$script;",
+                        "",
+                        "require $script;",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "d4049bdd6a260f45cea9e45d0fba9169c1868b3e"
+        }
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "copy-from-recipe": {
+        "tests/": "%SRC_DIR%/../tests/"
+    },
+    "dotenv": {
+        "test": {
+            "PANTHER_WEB_SERVER_ROUTER": "../tests/bootstrap-bundle/panther-router.php"
+        }
+    },
+    "post-install-output": [
+        "A Panther router script was added at",
+        "<comment>tests/bootstrap-bundle/panther-router.php</comment> and wired up via",
+        "<comment>PANTHER_WEB_SERVER_ROUTER</comment> in <comment>.env.test</comment>, so AssetMapper-compiled",
+        "CSS/JS/fonts/images load correctly during Panther test runs (PHP's built-in",
+        "web server otherwise routes every request through the Symfony kernel,",
+        "causing static assets to 404). If your project doesn't use symfony/panther,",
+        "this is unused and can safely be ignored.",
+        "See https://github.com/symfony/panther/issues/630 for details."
+    ]
+}
