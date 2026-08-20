@@ -1,6 +1,9 @@
 {
     "aliases": [],
     "recipes": {
+        "ub-unibe-ch/bootstrap-bundle": [
+            "1.0"
+        ],
         "ub-unibe-ch/dspace-api-bundle": [
             "0.0"
         ],
