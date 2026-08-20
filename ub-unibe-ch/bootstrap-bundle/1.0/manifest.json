@@ -6,7 +6,7 @@
         {
             "file": ".env.test",
             "content": [
-                "PANTHER_WEB_SERVER_ROUTER=%kernel.project_dir%/tests/bootstrap-bundle/panther-router.php"
+                "PANTHER_WEB_SERVER_ROUTER=../tests/bootstrap-bundle/panther-router.php"
             ],
             "position": "bottom",
             "requires": "symfony/panther",
