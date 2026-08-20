@@ -32,7 +32,7 @@ composer require ub-unibe-ch/translatable-entities-bundle
 
 | Package | Version | Description |
 |---|---|---|
-| `ub-unibe-ch/bootstrap-bundle` | `1.0` | Adds a `tests/bootstrap-bundle/panther-router.php` Panther workaround; if `symfony/panther` is required, also wires it up via `PANTHER_WEB_SERVER_ROUTER` in `.env.test` so static assets (fonts, CSS, JS) are served correctly during Panther test runs |
+| `ub-unibe-ch/bootstrap-bundle` | `1.0` | Adds a `tests/bootstrap-bundle/panther-router.php` Panther workaround and wires it up via `PANTHER_WEB_SERVER_ROUTER` in `.env.test`, unconditionally (harmless if `symfony/panther` is not used) |
 | `ub-unibe-ch/dspace-api-bundle` | `0.0` | Registers bundle, adds `.env` DSpace connection vars, copies config stub |
 | `ub-unibe-ch/job-report-bundle` | `1.0` | Registers bundle, adds `.env` report vars, copies config stub and Messenger middleware config |
 | `ub-unibe-ch/translatable-entities-bundle` | `0.0` | Registers bundle, adds `.env` locale vars, copies config stub |
