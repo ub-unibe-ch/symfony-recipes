@@ -1,4 +1,4 @@
-iiif_server:
+open_iiif_server_core:
     delivery_dir: '%env(resolve:DELIVERY_DIR)%'
     storage_dir: '%env(resolve:STORAGE_DIR)%'
     storage_format: '%env(STORAGE_FORMAT)%'

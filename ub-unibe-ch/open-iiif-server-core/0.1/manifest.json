@@ -1,6 +1,6 @@
 {
     "bundles": {
-        "IIIF\\ServerBundle\\IIIFServerBundle": ["all"]
+        "OpenIIIFServer\\Core\\CoreBundle": ["all"]
     },
     "copy-from-recipe": {
         "config/": "%CONFIG_DIR%/"
