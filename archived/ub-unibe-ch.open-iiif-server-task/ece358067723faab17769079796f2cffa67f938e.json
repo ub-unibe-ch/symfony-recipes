@@ -1,0 +1,15 @@
+{
+    "manifests": {
+        "ub-unibe-ch/open-iiif-server-task": {
+            "manifest": {
+                "bundles": {
+                    "OpenIIIFServer\\Task\\TaskBundle": [
+                        "all"
+                    ]
+                }
+            },
+            "files": [],
+            "ref": "ece358067723faab17769079796f2cffa67f938e"
+        }
+    }
+}

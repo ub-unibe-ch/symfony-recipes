@@ -23,16 +23,12 @@
                         "    delivery_dir: '%env(resolve:DELIVERY_DIR)%'",
                         "    storage_dir: '%env(resolve:STORAGE_DIR)%'",
                         "    storage_format: '%env(STORAGE_FORMAT)%'",
-                        "",
-                        "    # Table prefix per entity namespace; \"iiif_core_\" is reserved for the bundle",
-                        "    table_prefixes:",
-                        "        'App\\Entity\\': 'app_'",
                         ""
                     ],
                     "executable": false
                 }
             },
-            "ref": "768886f20251735496c7c5153b6a958feff26d78"
+            "ref": "af74a95cca5f3db39719e27ccb985da312fe5f11"
         }
     }
 }
