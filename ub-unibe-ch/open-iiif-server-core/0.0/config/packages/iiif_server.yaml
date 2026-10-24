@@ -1,8 +1,0 @@
-iiif_server:
-    delivery_dir: '%env(resolve:DELIVERY_DIR)%'
-    storage_dir: '%env(resolve:STORAGE_DIR)%'
-    storage_format: '%env(STORAGE_FORMAT)%'
-
-    # Table prefix per entity namespace; "iiif_" is reserved for the bundle
-    table_prefixes:
-        'App\Entity\': 'app_'
