@@ -1,0 +1,13 @@
+{
+    "bundles": {
+        "OpenIIIFServer\\Core\\CoreBundle": ["all"]
+    },
+    "copy-from-recipe": {
+        "config/": "%CONFIG_DIR%/"
+    },
+    "env": {
+        "DELIVERY_DIR": "%kernel.project_dir%/var/share/delivery",
+        "STORAGE_DIR": "%kernel.project_dir%/var/share/storage",
+        "STORAGE_FORMAT": "jxl"
+    }
+}
