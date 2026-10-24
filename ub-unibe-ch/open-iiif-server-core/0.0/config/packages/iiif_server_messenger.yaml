@@ -1,0 +1,5 @@
+framework:
+    messenger:
+        routing:
+            # Requires an "async" transport (see messenger.yaml)
+            'IIIF\ServerBundle\Message\*': async
