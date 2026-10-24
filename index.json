@@ -10,6 +10,9 @@
         "ub-unibe-ch/job-report-bundle": [
             "1.0"
         ],
+        "ub-unibe-ch/open-iiif-server-core": [
+            "0.0"
+        ],
         "ub-unibe-ch/translatable-entities-bundle": [
             "0.0"
         ]

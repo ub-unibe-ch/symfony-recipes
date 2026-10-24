@@ -1,0 +1,49 @@
+{
+    "manifests": {
+        "ub-unibe-ch/open-iiif-server-core": {
+            "manifest": {
+                "bundles": {
+                    "IIIF\\ServerBundle\\IIIFServerBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                },
+                "env": {
+                    "DELIVERY_DIR": "%kernel.project_dir%/var/share/delivery",
+                    "STORAGE_DIR": "%kernel.project_dir%/var/share/storage",
+                    "STORAGE_FORMAT": "jxl"
+                }
+            },
+            "files": {
+                "config/packages/iiif_server.yaml": {
+                    "contents": [
+                        "iiif_server:",
+                        "    delivery_dir: '%env(resolve:DELIVERY_DIR)%'",
+                        "    storage_dir: '%env(resolve:STORAGE_DIR)%'",
+                        "    storage_format: '%env(STORAGE_FORMAT)%'",
+                        "",
+                        "    # Table prefix per entity namespace; \"iiif_\" is reserved for the bundle",
+                        "    table_prefixes:",
+                        "        'App\\Entity\\': 'app_'",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/packages/iiif_server_messenger.yaml": {
+                    "contents": [
+                        "framework:",
+                        "    messenger:",
+                        "        routing:",
+                        "            # Requires an \"async\" transport (see messenger.yaml)",
+                        "            'IIIF\\ServerBundle\\Message\\*': async",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "4f08a952257c9bec13aae233d63fb8ccec82a3db"
+        }
+    }
+}
