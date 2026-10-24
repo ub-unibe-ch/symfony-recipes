@@ -1,0 +1,38 @@
+{
+    "manifests": {
+        "ub-unibe-ch/open-iiif-server-core": {
+            "manifest": {
+                "bundles": {
+                    "OpenIIIFServer\\Core\\CoreBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                },
+                "env": {
+                    "DELIVERY_DIR": "%kernel.project_dir%/var/share/delivery",
+                    "STORAGE_DIR": "%kernel.project_dir%/var/share/storage",
+                    "STORAGE_FORMAT": "jxl"
+                }
+            },
+            "files": {
+                "config/packages/open_iiif_server_core.yaml": {
+                    "contents": [
+                        "open_iiif_server_core:",
+                        "    delivery_dir: '%env(resolve:DELIVERY_DIR)%'",
+                        "    storage_dir: '%env(resolve:STORAGE_DIR)%'",
+                        "    storage_format: '%env(STORAGE_FORMAT)%'",
+                        "",
+                        "    # Table prefix per entity namespace; \"iiif_core_\" is reserved for the bundle",
+                        "    table_prefixes:",
+                        "        'App\\Entity\\': 'app_'",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "768886f20251735496c7c5153b6a958feff26d78"
+        }
+    }
+}
