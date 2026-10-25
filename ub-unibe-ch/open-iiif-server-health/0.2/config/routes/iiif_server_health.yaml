@@ -1,0 +1,3 @@
+iiif_server_health:
+    resource: '@SymSensorActuatorBundle/config/routing.yaml'
+    prefix: /_actuator

@@ -1,0 +1,13 @@
+{
+    "bundles": {
+        "OpenIIIFServer\\Health\\HealthBundle": ["all"]
+    },
+    "copy-from-recipe": {
+        "config/": "%CONFIG_DIR%/"
+    },
+    "env": {
+        "#1": "Comma-separated IPs/CIDRs allowed to access the actuator endpoints",
+        "ACTUATOR_INFO_IPS": "127.0.0.1,::1",
+        "ACTUATOR_HEALTH_IPS": "127.0.0.1,::1"
+    }
+}
