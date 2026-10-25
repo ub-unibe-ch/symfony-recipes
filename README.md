@@ -35,5 +35,6 @@ composer require ub-unibe-ch/translatable-entities-bundle
 | `ub-unibe-ch/bootstrap-bundle` | `1.0` | Adds a `tests/bootstrap-bundle/panther-router.php` Panther workaround and wires it up via `PANTHER_WEB_SERVER_ROUTER` in `.env.test`, unconditionally (harmless if `symfony/panther` is not used) |
 | `ub-unibe-ch/dspace-api-bundle` | `0.0` | Registers bundle, adds `.env` DSpace connection vars, copies config stub |
 | `ub-unibe-ch/job-report-bundle` | `1.0` | Registers bundle, adds `.env` report vars, copies config stub and Messenger middleware config |
-| `ub-unibe-ch/open-iiif-server-core` | `0.2` | Registers bundle, adds `.env` storage vars, copies the `open_iiif_server_core` config |
+| `ub-unibe-ch/open-iiif-server-core` | `0.2` | Registers bundle, adds `.env` storage vars, copies the `iiif_server_core` config |
+| `ub-unibe-ch/open-iiif-server-task` | `0.2` | Registers the bundle (Flex does not detect bundles that extend the Symfony 8.1 `AbstractBundle`) |
 | `ub-unibe-ch/translatable-entities-bundle` | `0.0` | Registers bundle, adds `.env` locale vars, copies config stub |
