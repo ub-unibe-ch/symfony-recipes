@@ -1,5 +1,0 @@
-{
-    "bundles": {
-        "OpenIIIFServer\\Task\\TaskBundle": ["all"]
-    }
-}
