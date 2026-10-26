@@ -1,0 +1,68 @@
+{
+    "manifests": {
+        "ub-unibe-ch/open-iiif-server-core": {
+            "manifest": {
+                "bundles": {
+                    "OpenIIIFServer\\Core\\CoreBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/",
+                    "translations/": "translations/",
+                    "var/": "%VAR_DIR%/"
+                },
+                "env": {
+                    "#1": "Absolute, existing and writable directories for the delivery and the storage files",
+                    "IIIF_CORE_FILESYSTEM_DELIVERY": "%kernel.project_dir%/var/share/delivery",
+                    "IIIF_CORE_FILESYSTEM_STORAGE": "%kernel.project_dir%/var/share/storage",
+                    "#2": "Maximum image dimension and file extension of the image format used to store imported images",
+                    "IIIF_CORE_IMPORT_MAX_DIMENSION": "10000",
+                    "IIIF_CORE_IMPORT_STORAGE_FORMAT": "jxl"
+                }
+            },
+            "files": {
+                "config/packages/iiif_server_core.yaml": {
+                    "contents": [
+                        "iiif_server_core:",
+                        "    project:",
+                        "        filesystem:",
+                        "            delivery: '%env(resolve:IIIF_CORE_FILESYSTEM_DELIVERY)%'",
+                        "            storage: '%env(resolve:IIIF_CORE_FILESYSTEM_STORAGE)%'",
+                        "        import:",
+                        "            max_dimension: '%env(IIIF_CORE_IMPORT_MAX_DIMENSION)%'",
+                        "            storage_format: '%env(IIIF_CORE_IMPORT_STORAGE_FORMAT)%'",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "translations/messages.en.yaml": {
+                    "contents": [
+                        "core:",
+                        "    project:",
+                        "        name: Project",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "var/share/delivery/.gitignore": {
+                    "contents": [
+                        "*",
+                        "!.gitignore",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "var/share/storage/.gitignore": {
+                    "contents": [
+                        "*",
+                        "!.gitignore",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "51506ef3fb3ce82460b8cb9a6d372456831fff5d"
+        }
+    }
+}
