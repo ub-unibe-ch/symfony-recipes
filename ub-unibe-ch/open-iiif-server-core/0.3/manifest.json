@@ -1,0 +1,18 @@
+{
+    "bundles": {
+        "OpenIIIFServer\\Core\\CoreBundle": ["all"]
+    },
+    "copy-from-recipe": {
+        "config/": "%CONFIG_DIR%/",
+        "translations/": "translations/",
+        "var/": "%VAR_DIR%/"
+    },
+    "env": {
+        "#1": "Absolute, existing and writable directories for the delivery and the storage files",
+        "IIIF_CORE_FILESYSTEM_DELIVERY": "%kernel.project_dir%/var/share/delivery",
+        "IIIF_CORE_FILESYSTEM_STORAGE": "%kernel.project_dir%/var/share/storage",
+        "#2": "Maximum image dimension and file extension of the image format used to store imported images",
+        "IIIF_CORE_IMPORT_MAX_DIMENSION": "10000",
+        "IIIF_CORE_IMPORT_STORAGE_FORMAT": "jxl"
+    }
+}

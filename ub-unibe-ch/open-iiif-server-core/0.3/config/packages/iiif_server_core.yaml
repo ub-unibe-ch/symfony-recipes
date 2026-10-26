@@ -1,0 +1,8 @@
+iiif_server_core:
+    project:
+        filesystem:
+            delivery: '%env(resolve:IIIF_CORE_FILESYSTEM_DELIVERY)%'
+            storage: '%env(resolve:IIIF_CORE_FILESYSTEM_STORAGE)%'
+        import:
+            max_dimension: '%env(IIIF_CORE_IMPORT_MAX_DIMENSION)%'
+            storage_format: '%env(IIIF_CORE_IMPORT_STORAGE_FORMAT)%'
