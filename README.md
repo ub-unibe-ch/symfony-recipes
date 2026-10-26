@@ -36,5 +36,5 @@ composer require ub-unibe-ch/translatable-entities-bundle
 | `ub-unibe-ch/dspace-api-bundle` | `0.0` | Registers bundle, adds `.env` DSpace connection vars, copies config stub |
 | `ub-unibe-ch/job-report-bundle` | `1.0` | Registers bundle, adds `.env` report vars, copies config stub and Messenger middleware config |
 | `ub-unibe-ch/open-iiif-server-core` | `0.3` | Registers bundle, adds the `IIIF_CORE_*` `.env` vars, copies the `iiif_server_core` config, the `messages.en.yaml` project name and the `var/share` directories |
-| `ub-unibe-ch/open-iiif-server-health` | `0.2` | Registers the bundle, adds `.env` actuator IP vars, copies the actuator route |
+| `ub-unibe-ch/open-iiif-server-health` | `0.3` | Registers the bundle, adds `.env` actuator IP vars, copies the actuator route |
 | `ub-unibe-ch/translatable-entities-bundle` | `0.0` | Registers bundle, adds `.env` locale vars, copies config stub |
